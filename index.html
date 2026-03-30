@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portfolio | Robin Anthonissen</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts voor een moderne look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- 1. NAVIGATIEBALK -->
+    <nav class="fixed top-0 w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="logo.svg" alt="RA Logo" class="h-10 w-10 mr-2">
+                    <span class="text-xl font-bold tracking-tighter text-accent">RA<span class="text-white">.PORTFOLIO</span></span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link active px-3 py-2 text-sm font-medium transition-colors hover:text-accent" onclick="showSection('home')">Home</a>
+                        <a href="#over-mij" class="nav-link px-3 py-2 text-sm font-medium transition-colors hover:text-accent" onclick="showSection('over-mij')">Over Mij</a>
+                        <a href="#projecten" class="nav-link px-3 py-2 text-sm font-medium transition-colors hover:text-accent" onclick="showSection('projecten')">Projecten</a>
+                        <a href="#cv" class="nav-link px-3 py-2 text-sm font-medium transition-colors hover:text-accent" onclick="showSection('cv')">CV</a>
+                    </div>
+                </div>
+                <!-- Mobiel Menu Knop (Hamburger) -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobiel Menu (verborgen by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 px-2 pt-2 pb-3 space-y-1 border-b border-slate-700">
+            <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700" onclick="showSection('home')">Home</a>
+            <a href="#over-mij" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700" onclick="showSection('over-mij')">Over Mij</a>
+            <a href="#projecten" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700" onclick="showSection('projecten')">Projecten</a>
+            <a href="#cv" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700" onclick="showSection('cv')">CV</a>
+        </div>
+    </nav>
+
+    <!-- CONTENT WRAPPER -->
+    <main class="flex-grow pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
+
+        <!-- SECTIE 1: HOME -->
+        <section id="home" class="section-fade active-section py-12 md:py-20">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4">
+                    Welkom op het E-Portfolio van <span class="text-accent">Robin Anthonissen</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-400 mb-8 max-w-3xl mx-auto">
+                    2e-jaars student Cloud & Cyber Security aan Thomas More Geel.
+                </p>
+                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700 max-w-2xl mx-auto mb-12 shadow-xl backdrop-blur-sm">
+                    <p class="text-lg leading-relaxed">
+                        Welkom op mijn portfolio. Ik ben een gepassioneerde IT-student met een sterke interesse in infrastructuur, security en het bouwen van efficiënte oplossingen. Kijk gerust rond om meer te ontdekken over mijn academische en persoonlijke projecten.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button onclick="showSection('projecten')" class="bg-accent hover:bg-cyan-500 text-slate-900 font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-cyan-500/20">
+                        Bekijk mijn Projecten
+                    </button>
+                    <button onclick="showSection('over-mij')" class="bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-8 rounded-full transition-all border border-slate-600">
+                        Lees meer Over Mij
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTIE 2: OVER MIJ -->
+        <section id="over-mij" class="section-fade hidden-section py-12">
+            <h2 class="text-3xl font-bold mb-10 border-b-2 border-accent inline-block pb-2">Over Mij</h2>
+            <div class="grid md:grid-cols-3 gap-12 items-start">
+                <!-- Foto -->
+                <div class="md:col-span-1">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-accent to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                        <img src="https://placehold.co/400x500/1e293b/22d3ee?text=Robin+Anthonissen" alt="Profielfoto Robin" class="relative rounded-2xl w-full shadow-2xl border border-slate-700 object-cover">
+                    </div>
+                </div>
+                <!-- Tekst -->
+                <div class="md:col-span-2 space-y-6">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-3 text-accent">Waarom IT?</h3>
+                        <p class="text-slate-300 leading-relaxed">
+                            Ik wilde altijd al Cloud & Cyber Security studeren. Omdat de IT-Factory een gezamenlijk eerste jaar heeft, ben ik gestart in Elektronica-ICT om een brede basis te leggen, waarna ik volledig voor mijn passie in CCS heb gekozen.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-3 text-accent">Hobby's & Interesses</h3>
+                        <ul class="list-disc list-inside text-slate-300 space-y-2">
+                            <li><span class="font-bold">Saxofoon spelen:</span> Dit brengt mij creativiteit en discipline.</li>
+                            <li><span class="font-bold">Docker containers:</span> Sinds vorig jaar experimenteer ik in mijn vrije tijd actief met het opzetten van applicaties in Docker.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800/40 p-6 rounded-xl border-l-4 border-accent">
+                        <h3 class="text-2xl font-semibold mb-3">Toekomstdromen & Ambities (Homelabbing)</h3>
+                        <p class="mb-4 text-slate-300 italic">
+                            "Mijn ultieme doel is om onafhankelijk te worden van dure abonnementen door middel van mijn hobby: homelabbing. Ik bouw graag mijn eigen infrastructuur."
+                        </p>
+                        <div class="grid sm:grid-cols-2 gap-3">
+                            <div class="bg-slate-900/50 p-3 rounded border border-slate-700 flex items-center">
+                                <span class="text-red-400 mr-2">✕ MS Office 365</span> ➔ <span class="text-green-400 ml-2">✓ OnlyOffice</span>
+                            </div>
+                            <div class="bg-slate-900/50 p-3 rounded border border-slate-700 flex items-center">
+                                <span class="text-red-400 mr-2">✕ Netflix</span> ➔ <span class="text-green-400 ml-2">✓ Jellyfin</span>
+                            </div>
+                            <div class="bg-slate-900/50 p-3 rounded border border-slate-700 flex items-center">
+                                <span class="text-red-400 mr-2">✕ OneDrive/Google</span> ➔ <span class="text-green-400 ml-2">✓ Nextcloud</span>
+                            </div>
+                            <div class="bg-slate-900/50 p-3 rounded border border-slate-700 flex items-center">
+                                <span class="text-red-400 mr-2">✕ GitHub/GitLab</span> ➔ <span class="text-green-400 ml-2">✓ Gitea</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTIE 3: PROJECTEN -->
+        <section id="projecten" class="section-fade hidden-section py-12">
+            <h2 class="text-3xl font-bold mb-10 border-b-2 border-accent inline-block pb-2">Projecten & Achievements</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <!-- Project 1 -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl transition-all group">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://placehold.co/600x400/1e293b/22d3ee?text=EduStreakz" alt="EduStreakz Project" class="w-full h-full object-cover transition-transform group-hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-accent text-slate-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Top Project</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">EduStreakz</h3>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            Een applicatie gebouwd met als doel 'Spelend Leren'. Ik heb meegebouwd aan een platform dat educatie combineert met gamification (streaks).
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded">Frontend</span>
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded">Backend</span>
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded">Teamwork</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/NilsDriezen/EduStreakz.git" target="_blank" class="flex-1 text-center py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-sm font-semibold transition-colors">Frontend GitHub</a>
+                            <a href="https://github.com/NilsDriezen/EduStreakz-Backend.git" target="_blank" class="flex-1 text-center py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-sm font-semibold transition-colors">Backend GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl transition-all group">
+                    <img src="https://placehold.co/600x400/1e293b/22d3ee?text=Tanzania+Solution" alt="IT Solution Tanzania" class="w-full h-48 object-cover transition-transform group-hover:scale-110">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">IT Solution voor Tanzania</h3>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            Internationale Dagen opdracht. Binnen één dag een concept en IT-oplossing ontworpen voor een regio zonder internettoegang.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded">Tijdsdruk</span>
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded">Conceptueel Denken</span>
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded">Communicatie</span>
+                        </div>
+                        <a href="https://github.com/RA1035813/ProffesionalWeek.git" target="_blank" class="block w-full text-center py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-sm font-semibold transition-colors">Bekijk op GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl transition-all group">
+                    <img src="https://placehold.co/600x400/1e293b/22d3ee?text=Slimme+Vuilbak" alt="Slimme Vuilbak Project" class="w-full h-48 object-cover transition-transform group-hover:scale-110">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Slimme Vuilbak</h3>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            Ontwerp en programmering van een slimme vuilbak die automatisch afval sorteert. Focus op hardware/software integratie.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded">Hardware/Software</span>
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded">Logica</span>
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded">Collaboration</span>
+                        </div>
+                        <a href="https://github.com/RA1035813/Skill.git" target="_blank" class="block w-full text-center py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-sm font-semibold transition-colors">Bekijk op GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl transition-all group">
+                    <img src="https://placehold.co/600x400/1e293b/22d3ee?text=FastAPI+Site" alt="FastAPI Project" class="w-full h-48 object-cover transition-transform group-hover:scale-110">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">FullStack FastAPI Site</h3>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            Mijn eerste dynamische website met FastAPI. Basis van backend logica en dynamische content generation.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded">FastAPI</span>
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded">Python</span>
+                            <span class="bg-slate-700 text-accent text-xs px-2 py-1 rounded">Web Basics</span>
+                        </div>
+                        <a href="https://github.com/itfactory-tm/2025-FullStack-BackEnd-105.git" target="_blank" class="block w-full text-center py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-sm font-semibold transition-colors">Bekijk op GitHub</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTIE 4: CV & SKILLS -->
+        <section id="cv" class="section-fade hidden-section py-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
+                <h2 class="text-3xl font-bold border-b-2 border-accent inline-block pb-2">CV & Vaardigheden</h2>
+                <a href="CV_Robin_Anthonissen.pdf" download class="bg-accent hover:bg-cyan-500 text-slate-900 font-bold py-2 px-6 rounded shadow transition-all flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+                    Download CV (PDF)
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Hard Skills -->
+                <div class="space-y-8">
+                    <h3 class="text-xl font-semibold text-slate-400 uppercase tracking-widest">Hard Skills</h3>
+
+                    <!-- Skill Group 1 -->
+                    <div>
+                        <p class="mb-2 font-medium">Netwerken & Infrastructuur</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-800 border border-accent/30 text-accent rounded text-sm">Layer 3 switching</span>
+                            <span class="px-3 py-1 bg-slate-800 border border-accent/30 text-accent rounded text-sm">OPNsense</span>
+                            <span class="px-3 py-1 bg-slate-800 border border-accent/30 text-accent rounded text-sm">DNS</span>
+                            <span class="px-3 py-1 bg-slate-800 border border-accent/30 text-accent rounded text-sm">DHCP</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Group 2 -->
+                    <div>
+                        <p class="mb-2 font-medium">Cloud & Containers</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-800 border border-accent/30 text-accent rounded text-sm">Docker</span>
+                            <span class="px-3 py-1 bg-slate-800 border border-accent/30 text-accent rounded text-sm">Kubernetes</span>
+                            <span class="px-3 py-1 bg-slate-800 border border-accent/30 text-accent rounded text-sm">Proxmox</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Group 3 -->
+                    <div>
+                        <p class="mb-2 font-medium">Development</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-800 border border-accent/30 text-accent rounded text-sm">Python</span>
+                            <span class="px-3 py-1 bg-slate-800 border border-accent/30 text-accent rounded text-sm">Java</span>
+                            <span class="px-3 py-1 bg-slate-800 border border-accent/30 text-accent rounded text-sm">FastAPI</span>
+                            <span class="px-3 py-1 bg-slate-800 border border-accent/30 text-accent rounded text-sm">HTML/CSS/JS</span>
+                            <span class="px-3 py-1 bg-slate-800 border border-accent/30 text-accent rounded text-sm">SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="bg-slate-800/30 p-8 rounded-2xl border border-slate-700">
+                    <h3 class="text-xl font-semibold text-slate-400 uppercase tracking-widest mb-6">Soft Skills</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-accent mr-3">✔</span>
+                            <div>
+                                <p class="font-bold">Probleemoplossend denken</p>
+                                <p class="text-sm text-slate-400">Ik zie uitdagingen als puzzels die opgelost moeten worden.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-accent mr-3">✔</span>
+                            <div>
+                                <p class="font-bold">Leergierig & Autodidact</p>
+                                <p class="text-sm text-slate-400">Mijn passie voor homelabbing drijft mij om constant nieuwe technologieën te leren.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-accent mr-3">✔</span>
+                            <div>
+                                <p class="font-bold">Teamspeler</p>
+                                <p class="text-sm text-slate-400">Ervaring in diverse schoolprojecten heeft mij geleerd hoe belangrijk communicatie is.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-8 text-center text-slate-500 text-sm">
+        <p>&copy; 2024 Robin Anthonissen - E-Portfolio student Thomas More Geel</p>
+        <p class="mt-2">Gemaakt met Tailwind CSS & Vanilla JS</p>
+    </footer>
+    <!-- JAVASCRIPT VOOR SPA NAVIGATIE -->
+    <script src="script.js"></script>
+</body>
+</html>
