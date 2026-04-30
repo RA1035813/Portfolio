@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Robin Anthonissen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            margin: 1cm;
+            size: A4;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: white;
+            color: #1e293b;
+        }
+        @media print {
+            .no-print {
+                display: none;
+            }
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .page-break-avoid {
+                page-break-inside: avoid;
+            }
+        }
+        .sidebar {
+            background-color: #f8fafc;
+            height: 100%;
+        }
+        .accent-text {
+            color: #0891b2;
+        }
+        .accent-bg {
+            background-color: #0891b2;
+        }
+    </style>
+</head>
+<body class="p-0 m-0">
+
+    <div class="max-w-[21cm] mx-auto bg-white min-h-[29.7cm] shadow-xl flex flex-row">
+        
+        <!-- Sidebar -->
+        <div class="w-1/3 sidebar p-8 border-r border-slate-200">
+            <div class="mb-10 text-center">
+                <div class="w-32 h-32 bg-slate-200 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden border-2 border-slate-300">
+                    <img src="Portfolio.jpg" alt="Robin Anthonissen" class="w-full h-full object-cover">
+                </div>
+                <h1 class="text-xl font-bold uppercase tracking-tighter">Robin Anthonissen</h1>
+                <p class="text-xs accent-text font-semibold uppercase">Cloud & Cyber Security</p>
+            </div>
+
+            <div class="space-y-8">
+                <section>
+                    <h2 class="text-sm font-bold border-b border-slate-300 pb-1 mb-3 uppercase">Contact</h2>
+                    <ul class="text-xs space-y-2">
+                        <li>📍 Loenhout, BELGIË</li>
+                        <li>📧 r1035813@student.thomasmore.be</li>
+                        <li>🔗 github.com/RA1035813</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-sm font-bold border-b border-slate-300 pb-1 mb-3 uppercase">Vaardigheden</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-bold text-[10px] uppercase text-slate-500 mb-1">Netwerken</h3>
+                            <p class="text-[10px] leading-relaxed">Layer 3 switches, OPNsense (Basics), Wireshark (Basics), DNS, DHCP, Dijkstra algoritme</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-[10px] uppercase text-slate-500 mb-1">Cloud</h3>
+                            <p class="text-[10px] leading-relaxed">Docker, Kubernetes, Proxmox</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-[10px] uppercase text-slate-500 mb-1">Ontwikkeling</h3>
+                            <p class="text-[10px] leading-relaxed">Python, Java, SQL, HTML/CSS, JavaScript</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-sm font-bold border-b border-slate-300 pb-1 mb-3 uppercase">Hobby's</h2>
+                    <ul class="text-xs space-y-1">
+                        <li>Saxofoon spelen</li>
+                        <li>Homelabbing</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="w-2/3 p-10 space-y-10">
+            
+            <!-- Profiel -->
+            <section class="page-break-avoid">
+                <h2 class="text-lg font-bold accent-text mb-3 uppercase tracking-wider flex items-center">
+                    <span class="w-8 h-[2px] accent-bg mr-3"></span>Profiel
+                </h2>
+                <p class="text-xs leading-relaxed text-slate-600">
+                    Gepassioneerde IT-student met een focus op infrastructuur en beveiliging. Gestart vanuit een praktische BSO-achtergrond en doorgegroeid naar een academische bachelor Cloud & Cyber Security. Gekenmerkt door een hands-on mentaliteit, doorzettingsvermogen en een passie voor het bouwen van veilige, schaalbare oplossingen.
+                </p>
+            </section>
+
+            <!-- Opleiding -->
+            <section class="page-break-avoid">
+                <h2 class="text-lg font-bold accent-text mb-4 uppercase tracking-wider flex items-center">
+                    <span class="w-8 h-[2px] accent-bg mr-3"></span>Opleiding
+                </h2>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="text-sm font-bold">Bachelor Cloud & Cyber Security</h3>
+                            <span class="text-[10px] font-semibold text-slate-400">2024 - Heden (2de jaar)</span>
+                        </div>
+                        <p class="text-xs font-medium text-slate-500 mb-2">Thomas More Geel</p>
+                        <p class="text-[10px] text-slate-600 leading-relaxed">
+                            Focus op netwerkbeveiliging, cloud-infrastructuur (Docker/K8s) en systeembeheer.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="text-sm font-bold">Secundair Onderwijs (5e, 6e & 7e BSO Bakkerij)</h3>
+                            <span class="text-[10px] font-semibold text-slate-400">2021 - 2024</span>
+                        </div>
+                        <p class="text-xs font-medium text-slate-500 mb-2">VTI Spijker Hoogstraten</p>
+                        <p class="text-[10px] text-slate-600 leading-relaxed">
+                            Praktijkgerichte opleiding met focus op techniek en discipline. Bewuste overstap gemaakt naar IT na het behalen van het diploma secundair onderwijs.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projecten -->
+            <section class="page-break-avoid">
+                <h2 class="text-lg font-bold accent-text mb-4 uppercase tracking-wider flex items-center">
+                    <span class="w-8 h-[2px] accent-bg mr-3"></span>Belangrijke Projecten
+                </h2>
+                <div class="space-y-4">
+                    <div class="border-l-2 border-slate-100 pl-4">
+                        <h3 class="text-sm font-bold">IT Solution Tanzania</h3>
+                        <p class="text-[10px] text-slate-600 mt-1 italic">SKIL2 Semester 2</p>
+                        <p class="text-[10px] text-slate-500 mt-1">Ontwikkeling van een FastAPI-backend en database in Docker-containers, inclusief VPN-testomgeving voor team-ontwikkeling.</p>
+                    </div>
+                    <div class="border-l-2 border-slate-100 pl-4">
+                        <h3 class="text-sm font-bold">Homelab Project</h3>
+                        <p class="text-[10px] text-slate-600 mt-1 italic">Docker, Nextcloud, Jellyfin</p>
+                        <p class="text-[10px] text-slate-500 mt-1">Opzetten en beheren van eigen infrastructuur voor data-privacy en media.</p>
+                    </div>
+                    <div class="border-l-2 border-slate-100 pl-4">
+                        <h3 class="text-sm font-bold">Slimme Vuilbak</h3>
+                        <p class="text-[10px] text-slate-600 mt-1 italic">SKIL2 Semester 1</p>
+                        <p class="text-[10px] text-slate-500 mt-1">Ik was verantwoordelijk voor het DevOps-gedeelte (zie de map Raspberry Pi/Docker) en de infrastructuur, terwijl mijn teamgenoten werkten aan het IoT-gedeelte.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Print Button (Hidden during print) -->
+    <div class="fixed bottom-8 right-8 no-print">
+        <button onclick="window.print()" class="bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-3 px-6 rounded-full shadow-2xl flex items-center transition-all">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+            Printen naar PDF
+        </button>
+    </div>
+
+</body>
+</html>

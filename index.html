@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portfolio | Robin Anthonissen</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts voor een moderne look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- 1. NAVIGATIEBALK -->
+    <nav class="fixed top-0 w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="logo.svg" alt="RA Logo" class="h-10 w-10 mr-2">
+                    <span class="text-xl font-bold tracking-tighter text-accent">RA<span class="text-white">.PORTFOLIO</span></span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link active px-3 py-2 text-sm font-medium transition-colors hover:text-accent" onclick="showSection('home')">Home</a>
+                        <a href="#over-mij" class="nav-link px-3 py-2 text-sm font-medium transition-colors hover:text-accent" onclick="showSection('over-mij')">Over Mij</a>
+                        <a href="#projecten" class="nav-link px-3 py-2 text-sm font-medium transition-colors hover:text-accent" onclick="showSection('projecten')">Projecten</a>
+                        <a href="#cv" class="nav-link px-3 py-2 text-sm font-medium transition-colors hover:text-accent" onclick="showSection('cv')">CV</a>
+                    </div>
+                </div>
+                <!-- Mobiel Menu Knop (Hamburger) -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobiel Menu (verborgen by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 px-2 pt-2 pb-3 space-y-1 border-b border-slate-700">
+            <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700" onclick="showSection('home')">Home</a>
+            <a href="#over-mij" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700" onclick="showSection('over-mij')">Over Mij</a>
+            <a href="#projecten" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700" onclick="showSection('projecten')">Projecten</a>
+            <a href="#cv" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700" onclick="showSection('cv')">CV</a>
+        </div>
+    </nav>
+
+    <!-- CONTENT WRAPPER -->
+    <main class="flex-grow pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto w-full">
+
+        <!-- SECTIE 1: HOME -->
+        <section id="home" class="section-fade active-section py-12 md:py-20">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4">
+                    Welkom op het E-Portfolio van <span class="text-accent">Robin Anthonissen</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-400 mb-8 max-w-3xl mx-auto">
+                    Student Cloud & Cyber Security aan Thomas More Geel.
+                </p>
+                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700 max-w-3xl mx-auto mb-12 shadow-xl backdrop-blur-sm text-left">
+                    <p class="text-lg leading-relaxed mb-4">
+                        Ik heb een enorme passie voor IT-infrastructuur en beveiliging. Mijn weg naar deze passie was uniek: ik ben gestart in een praktische vooropleiding (BSO) en heb vanuit die basis de bewuste en gedreven overstap gemaakt naar een academische IT-bachelor in Cloud & Cyber Security. 
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Deze transitie toont mijn doorzettingsvermogen en mijn vermogen om theoretische concepten te koppelen aan een praktische mindset. Ik ben constant op zoek naar manieren om complexe systemen veiliger en efficiënter te maken.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button onclick="showSection('projecten')" class="bg-accent hover:bg-cyan-500 text-slate-900 font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-cyan-500/20">
+                        Bekijk mijn Projecten
+                    </button>
+                    <button onclick="showSection('over-mij')" class="bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-8 rounded-full transition-all border border-slate-600">
+                        Lees meer Over Mij
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTIE 2: OVER MIJ -->
+        <section id="over-mij" class="section-fade hidden-section py-12">
+            <h2 class="text-3xl font-bold mb-10 border-b-2 border-accent inline-block pb-2">Over Mij</h2>
+            <div class="grid md:grid-cols-3 gap-12 items-start">
+                <!-- Foto -->
+                <div class="md:col-span-1">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-accent to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                        <img src="Portfolio.jpg" alt="Profielfoto Robin" class="relative rounded-2xl w-full shadow-2xl border border-slate-700 object-cover">
+                    </div>
+                </div>
+                <!-- Tekst -->
+                <div class="md:col-span-2 space-y-6">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-3 text-accent">Mijn Verhaal</h3>
+                        <p class="text-slate-300 leading-relaxed">
+                            Mijn passie voor IT is diep geworteld in een praktische nieuwsgierigheid. Na mijn BSO vooropleiding besloot ik mezelf uit te dagen door de overstap te maken naar de bachelor Cloud & Cyber Security aan de Thomas More Hogeschool. Deze weg heeft me niet alleen technische kennis bijgebracht, maar ook een enorme dosis doorzettingsvermogen en een hands-on mentaliteit die ik elke dag toepas in mijn projecten.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-3 text-accent">Hobby's & Passies</h3>
+                        <ul class="list-disc list-inside text-slate-300 space-y-4">
+                            <li>
+                                <span class="font-bold">Homelabbing:</span> Ik experimenteer actief met Docker containers (zoals Nextcloud en Jellyfin) om onafhankelijk te worden van dure cloud-abonnementen. Het zelf beheren van mijn infrastructuur is de ultieme leerschool.
+                            </li>
+                            <li>
+                                <span class="font-bold">Saxofoon spelen:</span> Muziek maken vereist zowel creativiteit als strikte discipline, kwaliteiten die ik ook in mijn professionele werk als IT-developer en security-expert meeneem.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800/40 p-6 rounded-xl border-l-4 border-accent">
+                        <h3 class="text-2xl font-semibold mb-3">Homelab Stack</h3>
+                        <p class="mb-4 text-slate-300 italic">
+                            "Door mijn eigen services te hosten, leer ik de fijne kneepjes van netwerken, security en containerisatie."
+                        </p>
+                        <div class="grid sm:grid-cols-2 gap-3">
+                            <div class="bg-slate-900/50 p-3 rounded border border-slate-700 flex items-center">
+                                <span class="text-blue-400 mr-2">✓ Nextcloud</span> (Bestandsbeheer)
+                            </div>
+                            <div class="bg-slate-900/50 p-3 rounded border border-slate-700 flex items-center">
+                                <span class="text-blue-400 mr-2">✓ Jellyfin</span> (Media Server)
+                            </div>
+                            <div class="bg-slate-900/50 p-3 rounded border border-slate-700 flex items-center">
+                                <span class="text-blue-400 mr-2">✓ Docker</span> (Containerisatie)
+                            </div>
+                            <div class="bg-slate-900/50 p-3 rounded border border-slate-700 flex items-center">
+                                <span class="text-blue-400 mr-2">✓ Reverse Proxy</span> (Beveiligde Toegang)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTIE 3: PROJECTEN -->
+        <section id="projecten" class="section-fade hidden-section py-12">
+            <h2 class="text-3xl font-bold mb-10 border-b-2 border-accent inline-block pb-2">Projecten & Realisaties</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <!-- Project 1: Slimme Vuilbak (TOP PROJECT) -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl transition-all group flex flex-col">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://placehold.co/600x400/1e293b/22d3ee?text=Slimme+Vuilbak" alt="Slimme Vuilbak Project" class="w-full h-full object-cover transition-transform group-hover:scale-110">
+                        <div class="absolute top-4 right-4 bg-accent text-slate-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Top Project</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-2xl font-bold mb-2">Slimme Vuilbak (SKIL2 Semester 1)</h3>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            <span class="font-bold text-slate-200">Context:</span> Projectweek waarbij we een slimme vuilbak hebben gemaakt die automatisch afval sorteert.
+                        </p>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            <span class="font-bold text-slate-200">Mijn bijdrage:</span> Ik heb het DevOps-gedeelte verzorgd (zie de map Raspberry Pi/Docker) en de infrastructuur opgezet, terwijl mijn teamgenoten zich richtten op de IoT-hardware en sensoren.
+                        </p>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            <span class="font-bold text-slate-200">Technologieën:</span> Python, Docker, FastAPI, PostgreSQL, JavaScript, AI, IoT.
+                        </p>
+                        <div class="mt-auto pt-4">
+                            <a href="https://github.com/RA1035813/Skill.git" target="_blank" class="block w-full text-center py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-xs font-semibold transition-colors">Bekijk op GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: IT Solution voor Tanzania -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl transition-all group flex flex-col">
+                    <img src="https://placehold.co/600x400/1e293b/22d3ee?text=Tanzania+Solution" alt="IT Solution Tanzania" class="w-full h-48 object-cover transition-transform group-hover:scale-110">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-2xl font-bold mb-2">IT Solution voor Tanzania (SKIL2 Semester 2)</h3>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            <span class="font-bold text-slate-200">Context:</span> Eén dag de tijd om een IT-solution te bedenken/maken voor mensen zonder internet in Tanzania.
+                        </p>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            <span class="font-bold text-slate-200">Mijn bijdrage:</span> Ik was verantwoordelijk voor het opzetten van de FastAPI-backend en de database binnen Docker-containers. Om een realistische testomgeving te creëren, draaide dit op een VM die toegankelijk was via VPN voor mijn teamgenoten. Hierdoor konden zij zich volledig focussen op de IoT-implementatie en SMS-functionaliteit.
+                        </p>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            <span class="font-bold text-slate-200">Technologieën:</span> FastAPI, PostgreSQL, OpenRouter (AI API-keys), Docker.
+                        </p>
+                        <div class="mt-auto pt-4">
+                            <a href="https://github.com/RA1035813/ProffesionalWeek.git" target="_blank" class="block w-full text-center py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-xs font-semibold transition-colors">Bekijk op GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: EduStreakz -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl transition-all group flex flex-col">
+                    <img src="https://placehold.co/600x400/1e293b/22d3ee?text=EduStreakz" alt="EduStreakz Project" class="w-full h-48 object-cover transition-transform group-hover:scale-110">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-2xl font-bold mb-2">EduStreakz</h3>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            <span class="font-bold text-slate-200">Context:</span> Een applicatie gebouwd met als doel 'Spelend Leren' via gamification (streaks).
+                        </p>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            <span class="font-bold text-slate-200">Mijn bijdrage:</span> Ik heb binnen dit team gewerkt aan zowel de back-end als de front-end. Mijn focus lag op de algemene structuur; de specifieke game-logica heb ik niet gewijzigd.
+                        </p>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            <span class="font-bold text-slate-200">Technologieën:</span> JavaScript
+                        </p>
+                        <div class="mt-auto pt-4 flex gap-4">
+                            <a href="https://github.com/NilsDriezen/EduStreakz.git" target="_blank" class="flex-1 text-center py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-xs font-semibold transition-colors">Front-end GitHub</a>
+                            <a href="https://github.com/NilsDriezen/EduStreakz-Backend.git" target="_blank" class="flex-1 text-center py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-xs font-semibold transition-colors">Back-end GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: FullStack FastAPI Site -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl transition-all group flex flex-col">
+                    <img src="https://placehold.co/600x400/1e293b/22d3ee?text=FastAPI+Site" alt="FastAPI Project" class="w-full h-48 object-cover transition-transform group-hover:scale-110">
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-2xl font-bold mb-2">FullStack FastAPI Site</h3>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            <span class="font-bold text-slate-200">Context:</span> Project 02 (eerste jaar). Mijn eerste ervaring met het bouwen van een dynamische site met FastAPI.
+                        </p>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            <span class="font-bold text-slate-200">Mijn bijdrage:</span> In dit project was ik verantwoordelijk voor het ontwikkelen van twee specifieke webpagina's en de bijbehorende FastAPI-backend. Om de samenwerking soepel te laten verlopen, hebben we gewerkt met een duidelijke mappenstructuur per student (bijv. student2_models.py) om zo de code-integriteit te waarborgen.
+                        </p>
+                        <p class="text-slate-400 mb-4 text-sm">
+                            <span class="font-bold text-slate-200">Technologieën:</span> Python, FastAPI, HTML/CSS, PostgreSQL.
+                        </p>
+                        <div class="mt-auto pt-4">
+                            <a href="https://github.com/itfactory-tm/2025-FullStack-BackEnd-105.git" target="_blank" class="block w-full text-center py-2 bg-slate-700 hover:bg-slate-600 rounded-lg text-xs font-semibold transition-colors">Bekijk op GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTIE 4: CV & SKILLS -->
+        <section id="cv" class="section-fade hidden-section py-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
+                <h2 class="text-3xl font-bold border-b-2 border-accent inline-block pb-2">Curriculum Vitae</h2>
+                <a href="cv-print.html" target="_blank" class="bg-accent hover:bg-cyan-500 text-slate-900 font-bold py-2 px-6 rounded shadow transition-all flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+                    Printvriendelijk CV
+                </a>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-12">
+                <!-- Links: Skills -->
+                <div class="lg:col-span-1 space-y-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-accent mb-6 uppercase tracking-wider">Technische Vaardigheden</h3>
+                        
+                        <div class="space-y-6">
+                            <!-- Netwerken -->
+                            <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700">
+                                <h4 class="font-bold text-slate-200 mb-2">Netwerken & Security</h4>
+                                <p class="text-xs text-slate-400 mb-3">Focus op veilige infrastructuur en routering.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-slate-900 text-accent rounded text-xs border border-accent/20">Layer 3 switches</span>
+                                    <span class="px-2 py-1 bg-slate-900 text-accent rounded text-xs border border-accent/20">OPNsense (Basics)</span>
+                                    <span class="px-2 py-1 bg-slate-900 text-accent rounded text-xs border border-accent/20">Wireshark (Basics)</span>
+                                    <span class="px-2 py-1 bg-slate-900 text-accent rounded text-xs border border-accent/20">DNS/DHCP</span>
+                                    <span class="px-2 py-1 bg-slate-900 text-accent rounded text-xs border border-accent/20">Dijkstra algoritme</span>
+                                </div>
+                            </div>
+
+                            <!-- Cloud -->
+                            <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700">
+                                <h4 class="font-bold text-slate-200 mb-2">Cloud & Containers</h4>
+                                <p class="text-xs text-slate-400 mb-3">Automatisering en schaalbaarheid.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-slate-900 text-accent rounded text-xs border border-accent/20">Docker</span>
+                                    <span class="px-2 py-1 bg-slate-900 text-accent rounded text-xs border border-accent/20">Kubernetes</span>
+                                    <span class="px-2 py-1 bg-slate-900 text-accent rounded text-xs border border-accent/20">Proxmox</span>
+                                </div>
+                            </div>
+
+                            <!-- Development -->
+                            <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700">
+                                <h4 class="font-bold text-slate-200 mb-2">Programmeertalen & Web</h4>
+                                <p class="text-xs text-slate-400 mb-3">Full-stack development en scripting.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-slate-900 text-accent rounded text-xs border border-accent/20">Python</span>
+                                    <span class="px-2 py-1 bg-slate-900 text-accent rounded text-xs border border-accent/20">Java</span>
+                                    <span class="px-2 py-1 bg-slate-900 text-accent rounded text-xs border border-accent/20">SQL</span>
+                                    <span class="px-2 py-1 bg-slate-900 text-accent rounded text-xs border border-accent/20">HTML/CSS/JS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800/30 p-6 rounded-2xl border border-slate-700">
+                        <h3 class="text-xl font-bold text-slate-200 mb-4 uppercase tracking-wider">Persoonlijk</h3>
+                        <ul class="space-y-3 text-sm text-slate-400">
+                            <li class="flex items-center"><span class="text-accent mr-2">✔</span> Creatief & Gedisciplineerd</li>
+                            <li class="flex items-center"><span class="text-accent mr-2">✔</span> Probleemoplossend</li>
+                            <li class="flex items-center"><span class="text-accent mr-2">✔</span> Hands-on Mentaliteit</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Rechts: CV Details -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- Opleiding -->
+                    <div>
+                        <h3 class="text-xl font-bold text-accent mb-6 flex items-center">
+                            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/><path d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+                            Opleiding
+                        </h3>
+                        <div class="relative pl-8 border-l-2 border-slate-700 space-y-8">
+                            <div class="relative">
+                                <div class="absolute -left-10 top-1 w-4 h-4 rounded-full bg-accent"></div>
+                                <h4 class="text-lg font-bold text-slate-200">Bachelor Cloud & Cyber Security</h4>
+                                <p class="text-accent font-medium">Thomas More Geel | 2024 - Heden (2de jaar)</p>
+                                <p class="text-slate-400 mt-2 text-sm leading-relaxed">
+                                    Focus op het ontwerpen, beveiligen en beheren van complexe IT-infrastructuren. Specialisatie in cloud-technologieën en cybersecurity-protocollen.
+                                </p>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -left-10 top-1 w-4 h-4 rounded-full bg-slate-600"></div>
+                                <h4 class="text-lg font-bold text-slate-200">Secundair Onderwijs (5e, 6e & 7e BSO Bakkerij)</h4>
+                                <p class="text-slate-500 font-medium">VTI Spijker Hoogstraten | 2021 - 2024</p>
+                                <p class="text-slate-400 mt-2 text-sm leading-relaxed">
+                                    Praktijkgerichte opleiding die de basis legde voor mijn technische inzichten, discipline en doorzettingsvermogen voor de overstap naar IT.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ervaring / Projecten Summary -->
+                    <div>
+                        <h3 class="text-xl font-bold text-accent mb-6 flex items-center">
+                            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+                            Belangrijkste Realisaties
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-slate-800/40 rounded-xl border border-slate-700">
+                                <h4 class="font-bold text-slate-200">IT Solution Tanzania (SKIL2)</h4>
+                                <p class="text-sm text-slate-400">Ontwikkeling van een offline IT-oplossing. Verantwoordelijk voor de FastAPI-backend, database en VPN-testomgeving in Docker.</p>
+                            </div>
+                            <div class="p-4 bg-slate-800/40 rounded-xl border border-slate-700">
+                                <h4 class="font-bold text-slate-200">Homelab Infrastructuur</h4>
+                                <p class="text-sm text-slate-400">Zelfgebouwd ecosysteem met Docker, Nextcloud en Jellyfin voor data-soevereiniteit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-8 text-center text-slate-500 text-sm">
+        <p>&copy; <span id="current-year"></span> Robin Anthonissen - E-Portfolio student Thomas More Geel</p>
+        <p class="mt-2">Gemaakt met Tailwind CSS & Vanilla JS</p>
+    </footer>
+    <!-- JAVASCRIPT VOOR SPA NAVIGATIE -->
+    <script src="script.js"></script>
+</body>
+</html>
